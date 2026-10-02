@@ -34,7 +34,7 @@ struct CameraConfig {
     std::string device = "/dev/video0";
     int width = 1920, height = 1080, fps = 30;
 
-    std::string decoder = "mppjpegdec";
+    std::string decoder = "jpegdec";
     std::string scaler  = "videoscale ! videoconvert";
 
     GcsBranch gcs;

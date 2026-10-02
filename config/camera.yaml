@@ -4,7 +4,7 @@ camera_node:
     width: 1920
     height: 1080
     fps: 30
-    decoder: "mppjpegdec"
+    decoder: "jpegdec"
     scaler: "videoscale ! videoconvert"
     gcs_socket: "/tmp/cam_gcs.sock"
     gcs_width: 1280

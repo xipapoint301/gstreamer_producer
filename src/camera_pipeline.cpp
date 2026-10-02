@@ -43,7 +43,8 @@ namespace camera_stream
         for (const auto& b : cfg_.nn) ::unlink(b.socket_path.c_str());
 
         GError* err = nullptr;
-        GstElement* p = gst_parse_launch(make_pipeline_desc(cfg_).c_str(), &err);
+        GstElement* p = gst_parse_launch_full(make_pipeline_desc(cfg_).c_str(), nullptr,
+                                              GST_PARSE_FLAG_FATAL_ERRORS, &err);
         if (!p) {
             emit(std::string("parse error: ") + (err ? err->message : "unknown"));
             g_clear_error(&err);
