@@ -1,0 +1,15 @@
+camera_node:
+  ros__parameters:
+    device: /dev/video0
+    width: 1920
+    height: 1080
+    fps: 30
+    decoder: "mppjpegdec"
+    scaler: "videoscale ! videoconvert"
+    gcs_socket: "/tmp/cam_gcs.sock"
+    gcs_width: 1280
+    gcs_height: 720
+    gcs_fps: 15
+    nn_widths:  [640, 640]
+    nn_heights: [640, 640]
+    nn_sockets: ["/tmp/cam_nn0.sock", "/tmp/cam_nn1.sock"]
